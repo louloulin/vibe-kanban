@@ -1,5 +1,7 @@
 # Rust
 /target
+**/target/
+frontend/target/
 **/*.rs.bk
 
 # Node.js
