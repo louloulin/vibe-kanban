@@ -12,7 +12,10 @@
     "lint:fix": "eslint . --ext ts,tsx --fix",
     "lint:i18n": "LINT_I18N=true eslint . --ext ts,tsx --max-warnings 0",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
-    "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,css,md}\""
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "tauri": "tauri",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "tauri build"
   },
   "dependencies": {
     "@codemirror/lang-json": "^6.0.2",
@@ -40,6 +43,12 @@
     "@rjsf/shadcn": "6.1.1",
     "@sentry/react": "^9.34.0",
     "@sentry/vite-plugin": "^3.5.0",
+    "@tauri-apps/api": "^2.2.0",
+    "@tauri-apps/plugin-shell": "^2.2.0",
+    "@tauri-apps/plugin-dialog": "^2.2.0",
+    "@tauri-apps/plugin-fs": "^2.2.0",
+    "@tauri-apps/plugin-process": "^2.2.0",
+    "@tauri-apps/plugin-clipboard-manager": "^2.2.0",
     "@tanstack/electric-db-collection": "^0.2.6",
     "@tanstack/react-db": "^0.1.50",
     "@tanstack/react-form": "^1.23.8",
@@ -79,6 +88,7 @@
     "@rjsf/utils": "6.1.1",
     "@rjsf/validator-ajv8": "6.1.1",
     "@tailwindcss/container-queries": "^0.1.1",
+    "@tauri-apps/cli": "^2.2.0",
     "@types/lodash": "^4.17.20",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",

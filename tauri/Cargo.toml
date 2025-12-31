@@ -1,0 +1,44 @@
+[package]
+name = "vibe-kanban-desktop"
+version = "0.0.143"
+authors = ["Vibe Kanban Team"]
+description = "Vibe Kanban - AI coding agent orchestration platform"
+license = "Apache-2.0"
+repository = "https://github.com/BloopAI/vibe-kanban"
+edition = "2021"
+
+# Do not publish to crates.io
+publish = false
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [
+  "tray-icon",
+] }
+tauri-plugin-shell = "2"
+tauri-plugin-dialog = "2"
+tauri-plugin-fs = "2"
+tauri-plugin-process = "2"
+tauri-plugin-clipboard-manager = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order"] }
+tokio = { version = "1", features = ["full"] }
+anyhow = "1.0"
+thiserror = "2.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Workspace dependencies
+server = { path = "../crates/server" }
+db = { path = "../crates/db" }
+services = { path = "../crates/services" }
+executors = { path = "../crates/executors" }
+deployment = { path = "../crates/deployment" }
+local-deployment = { path = "../crates/local-deployment" }
+utils = { path = "../crates/utils" }
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]

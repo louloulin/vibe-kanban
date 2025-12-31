@@ -1,0 +1,5 @@
+[workspace]
+members = ["src-tauri"]
+
+[workspace.dependencies]
+# This workspace configuration allows Tauri to find the actual Rust backend
